@@ -18,6 +18,11 @@ struct SearchView: View {
                 TextField("Search", text: $searchText, onCommit: {
                     searchMovies(query: searchText)
                 })
+                
+                .textContentType(.none)  // Prevents iOS from suggesting specific keyboards
+                .keyboardType(.asciiCapable)  // Ensures English-capable keyboard
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
                 .foregroundColor(.black)
                 .padding(.vertical, 10)
                 
